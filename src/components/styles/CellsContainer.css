@@ -1,0 +1,43 @@
+.panelControl {
+	background-color: rgb(20, 20, 20);
+	color: white;
+	display: flex;
+	min-width: 100%;
+	align-content: space-around;
+}
+
+.panelControl label {
+	display: flex;
+
+	margin: auto;
+	justify-content: center;
+	align-items: center;
+}
+
+.panelControl label input {
+	margin: 10px;
+	max-width: 50px;
+}
+
+.CellsContainer {
+	background-color: white;
+	box-shadow: 0 0px 20px 0px rgba(0, 0, 0, 0.2);
+	border-radius: 10px;
+
+	width: 75%;
+	height: 75%;
+
+	padding: 20px;
+	margin: 4rem auto;
+
+	display: flex;
+}
+
+.ContFilas {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}

@@ -1,0 +1,20 @@
+.cell {
+	background-color: rgb(240, 240, 240);
+	width: 5em;
+	height: 5em;
+	border: 0.5px solid rgb(197, 196, 196);
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.cell:hover {
+	background-color: rgb(209, 207, 207);
+	cursor: pointer;
+}
+
+.PropiedadFilas {
+	max-width: 100%;
+	display: flex;
+}
