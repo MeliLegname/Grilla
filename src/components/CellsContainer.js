@@ -11,7 +11,6 @@ class CellsContainer extends React.Component {
 
 		this.state = {
 			numColumn: 3,
-
 			numRow: 3,
 
 			estados: [ 'X', 'O', ' ' ]
