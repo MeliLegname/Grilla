@@ -1,18 +1,12 @@
 import React from 'react';
 import './styles/Cell.css';
 
-class Cell extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {};
-	}
+// class Cell extends React.Component {
 
-	handleClick = (e) => {
-		console.log('Button was clicked');
-	};
-	render() {
-		return <div className="cell" onClick={this.handleClick} />;
-	}
-}
+const Cell = (props) => (
+	<div className="cell" onClick={props.handleClick(props.key, props.fila)}>
+		{props.estado}
+	</div>
+);
 
 export default Cell;

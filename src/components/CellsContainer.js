@@ -12,11 +12,15 @@ class CellsContainer extends React.Component {
 		this.state = {
 			numColumn: 3,
 
-			numRow: 3
+			numRow: 3,
+
+			estados: [ 'X', 'O', ' ' ]
 		};
 	}
 
 	// const children = props.children;
+
+	handleClick(index) {}
 
 	inputChangeHandle(name, event) {
 		let state = { ...this.state };
@@ -67,7 +71,14 @@ class CellsContainer extends React.Component {
 							return (
 								<div className="PropiedadFilas" key={indexFila}>
 									{column.map((object, index) => {
-										return <Cell key={index} fila={indexFila} />;
+										return (
+											<Cell
+												handleClick={() => this.handleClick(index)}
+												estado={'J'}
+												key={index}
+												fila={indexFila}
+											/>
+										);
 									})}
 								</div>
 							);
