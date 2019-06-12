@@ -1,8 +1,8 @@
 import React from 'react';
-import logo from './logo.svg';
+
 import './App.css';
 import CellsContainer from './components/CellsContainer';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 import Cell from './components/Cell';
 
 function App() {
