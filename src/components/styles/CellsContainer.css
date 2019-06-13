@@ -1,24 +1,3 @@
-.panelControl {
-	background-color: rgb(20, 20, 20);
-	color: white;
-	display: flex;
-	min-width: 100%;
-	align-content: space-around;
-}
-
-.panelControl label {
-	display: flex;
-
-	margin: auto;
-	justify-content: center;
-	align-items: center;
-}
-
-.panelControl label input {
-	margin: 10px;
-	max-width: 50px;
-}
-
 .CellsContainer {
 	background-color: white;
 	box-shadow: 0 0px 20px 0px rgba(0, 0, 0, 0.2);
