@@ -87,29 +87,6 @@ class CellsContainer extends React.Component {
 		}
 		return (
 			<React.Fragment>
-				<div className="panelControl">
-					<label>
-						<p>Columnas:</p>
-						<input
-							type="number"
-							name="quantity"
-							min="3"
-							value={this.state.numColumn}
-							onChange={(event) => this.inputChangeHandle('numColumn', event)}
-						/>
-					</label>
-
-					<label>
-						<p>Filas:</p>
-						<input
-							type="number"
-							name="quantity"
-							min="3"
-							value={this.state.numRow}
-							onChange={(event) => this.inputChangeHandle('numRow', event)}
-						/>
-					</label>
-				</div>
 				<div className="CellsContainer">
 					<div className="ContFilas">
 						{row.map((object, indexFila) => {
