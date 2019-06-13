@@ -8,17 +8,23 @@ class CellsContainer extends React.Component {
 		super(props);
 
 		this.state = {
-			numColumn: 3,
-			numRow: 3,
+			numColumn: 5,
+			numRow: 5,
 
-			estados: [ 'X', 'O', ' ' ],
+			posibleValue: [ ' ', 'X', 'O', 'J', 'R' ],
 			cellState: []
 		};
 	}
 
 	initCellState() {
-		let cellState = [ ...Array(9) ].map((cellState) => (cellState = this.state.estados[0]));
+		let cellState = [ ...Array(this.state.numColumn * this.state.numRow) ].map(
+			(cellState) => (cellState = this.state.posibleValue[0])
+		);
 		this.setState({ cellState });
+	}
+
+	getArrayIndex(row, column) {
+		return row * this.state.numColumn + column;
 	}
 
 	//buscar como pasar el estado porque bla si se ve como se modifica pero this.state.cellState no.
@@ -37,6 +43,29 @@ class CellsContainer extends React.Component {
 		this.setState(state);
 	}
 
+	handleClick(arrayIndex) {
+		let estadoActual = this.state.cellState[arrayIndex];
+		let newState = [ ...this.state.cellState ];
+
+		for (let i = 0; i < this.state.posibleValue.length; ++i) {
+			if (estadoActual === this.state.posibleValue[i]) {
+				if (this.state.posibleValue[i + 1]) {
+					newState[arrayIndex] = this.state.posibleValue[i + 1];
+				} else {
+					newState[arrayIndex] = this.state.posibleValue[0];
+				}
+			}
+		}
+		this.setState({ cellState: newState });
+	}
+	//Yo guardo el estado actual de cada celda en cellState para eso necesite pasarle un indice a cada celda.
+	//por otro lado genere un new state para que me copie el estado actual de cellstate y me lo pise con el nuevo estado de cada celda.
+	// lo que hace la función es recorrer la cantidad de posibles valores que tengo en el array. Si el estado actual de las celdads es igual al valor inicial de losposibles valores RECORRE posibles valores para ver si hay un valor siguiente a ese. SI HAY un valor siguiente a ese .. se cambia el estadado actual(se copia el estado y s elo pisa con newstate) por el valor siguiente que existe en posible value. SINO existe el estado siguiente (osea si ya se fue del array) volveme al estado inicial (que es 0). por ultimo reemplazame el lugar donde yo estoy guardando el estado actual por el nuevo estado.
+
+	showState(arrayIndex) {
+		return this.state.cellState[arrayIndex];
+	}
+	//para acceder al indice de n array hay que ponerlo entre corchetes NO entre parentesis.
 	render() {
 		let column = [];
 
@@ -81,10 +110,11 @@ class CellsContainer extends React.Component {
 									{column.map((object, index) => {
 										return (
 											<Cell
-												handleClick={() => this.handleClick(index, indexFila)}
-												estado={this.state.cellState}
+												handleClick={(arrayIndex) => this.handleClick(arrayIndex)}
+												arrayIndex={this.getArrayIndex(indexFila, index)}
 												key={index}
 												fila={indexFila}
+												showState={(arrayIndex) => this.showState(arrayIndex)}
 											/>
 										);
 									})}
