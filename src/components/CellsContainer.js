@@ -8,11 +8,9 @@ class CellsContainer extends React.Component {
 		super(props);
 
 		this.state = {
-			numColumn: 5,
-			column: [],
+			numColumn: 12,
 
-			numRow: 5,
-			row: [],
+			numRow: 12,
 
 			posibleValue: [ ' ', 'X', 'O', 'J', 'R' ],
 			cellState: []
