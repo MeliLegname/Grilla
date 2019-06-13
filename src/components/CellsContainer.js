@@ -9,7 +9,10 @@ class CellsContainer extends React.Component {
 
 		this.state = {
 			numColumn: 5,
+			column: [],
+
 			numRow: 5,
+			row: [],
 
 			posibleValue: [ ' ', 'X', 'O', 'J', 'R' ],
 			cellState: []
@@ -17,7 +20,8 @@ class CellsContainer extends React.Component {
 	}
 
 	initCellState() {
-		let cellState = [ ...Array(this.state.numColumn * this.state.numRow) ].map(
+		console.log(this.state.numColumn, this.state.numRow);
+		let cellState = [ ...Array(parseInt(this.state.numColumn, 10) * parseInt(this.state.numRow, 10)) ].map(
 			(cellState) => (cellState = this.state.posibleValue[0])
 		);
 		this.setState({ cellState });
@@ -40,8 +44,12 @@ class CellsContainer extends React.Component {
 	inputChangeHandle(name, event) {
 		let state = { ...this.state };
 		state[name] = event.target.value;
-		this.setState(state);
+		this.setState({ state }, () => {
+			// this.initCellState();
+		});
 	}
+
+	//estoy haciendo un setstate e inmediatamente despues de eso ejecuto la funcion initcellsatate que NECESITA QUE el state este actualizado y no llega a estarlo.
 
 	handleClick(arrayIndex) {
 		let estadoActual = this.state.cellState[arrayIndex];
