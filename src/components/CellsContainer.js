@@ -26,6 +26,7 @@ class CellsContainer extends React.Component {
 		);
 		this.setState({ cellState });
 	}
+	//en esta funcion se inicializa el estado de la celda . dice que cellState es igual a la copia del numero que da como resultado la multiplicacion del numero de filas por el numero de columnas(porque de sta forma saco el numero indice) se le realizo el parseInt para poder convertir los strings en numeros y se le puso el numero 10 para avisar que va a ser un numero entero.
 
 	getArrayIndex(row, column) {
 		return row * this.state.numColumn + column;
@@ -73,7 +74,7 @@ class CellsContainer extends React.Component {
 	showState(arrayIndex) {
 		return this.state.cellState[arrayIndex];
 	}
-	//para acceder al indice de n array hay que ponerlo entre corchetes NO entre parentesis.
+	//EN showstate se retonerna el estado de la celda, para esto se le tiene que pasar el arrayindex. para acceder al indice de un array hay que ponerlo entre corchetes NO entre parentesis.
 	render() {
 		let column = [];
 
@@ -85,10 +86,12 @@ class CellsContainer extends React.Component {
 		for (let i = 0; i < this.state.numRow; i++) {
 			row.push(row['']);
 		}
+		//declaramos column y row como un array vacio para pushear ahi dentro el estado.
 		return (
 			<React.Fragment>
 				<div className="CellsContainer">
 					<div className="ContFilas">
+						{/* aca se realizo un map a row el cual retorna un div nuevo con la propiedad filas que pertenece a display flex  direction row. esto es importante ya que si no se generara este div nuevo, y se le podria igualmente el div contfilas con direction colum y todo se podria vertical. */}
 						{row.map((object, indexFila) => {
 							return (
 								<div className="PropiedadFilas" key={indexFila}>
@@ -102,6 +105,8 @@ class CellsContainer extends React.Component {
 												showState={(arrayIndex) => this.showState(arrayIndex)}
 											/>
 										);
+										//el handleclick es una funcion creada en cells dentro de un onclick. a esta funcion le pasas por props un array index que es el resultado de la cuentra entre el index de las filas y el index de las columnas y la ejecurtas.
+										//tambien se llama a la funcion getArrayindex que es la funcion que genera la cuenta que te da el resultado del arrayindex que luego s elo pasa por props a habndleclick. Key corresponde al index de la columna y fila hace referencia al index de gula. la funcion showstate es llamada cpara mostrar el estado de la celda. a este se le pasa arrayindex porque la se necesita saber en que posición esta para ver que estado le pertenece
 									})}
 								</div>
 							);

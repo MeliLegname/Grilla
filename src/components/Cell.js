@@ -8,5 +8,6 @@ const Cell = (props) => (
 		{props.showState(props.arrayIndex)}
 	</div>
 );
-
+// Acá estoy creando un div con un onclick que le pasamos por props handleclick, que es una funcion creada en cellcontainers.
+//Luego estoy mostrando tambien por props DENTRO DE LA CELDA cual es el estado de la misma, para esto hay que pasarle el arrayIndex proque sino no sbe a que celda especifica estamos llamando.
 export default Cell;
