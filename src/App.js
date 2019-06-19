@@ -9,7 +9,9 @@ export default class App extends React.Component {
 		super(props);
 
 		this.state = {
-			numColumn: 10,
+			tituloDelJuego: 'TA TE TI',
+
+			numColumn: 3,
 
 			numRow: 3,
 
@@ -94,6 +96,7 @@ export default class App extends React.Component {
 					getArrayIndex={this.getArrayIndex}
 					showState={this.showState}
 					posibleValue={this.state.posibleValue}
+					tituloDelJuego={this.state.tituloDelJuego}
 				/>
 			</BrowserRouter>
 		);

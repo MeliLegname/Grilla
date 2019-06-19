@@ -17,6 +17,7 @@ export default class CellsContainer extends React.Component {
 		}
 		return (
 			<React.Fragment>
+				<h1 className="tituloDelJuego">ESTAS JUGANDO {this.props.tituloDelJuego}</h1>
 				<div className="CellsContainer">
 					<div className="ContFilas">
 						{/* aca se realizo un map a row el cual retorna un div nuevo con la propiedad filas que pertenece a display flex  direction row. esto es importante ya que si no se generara este div nuevo, y se le podria igualmente el div contfilas con direction colum y todo se podria vertical. */}
