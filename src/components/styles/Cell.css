@@ -9,6 +9,11 @@
 	align-items: center;
 }
 
+.cell img {
+	max-width: 90%;
+	max-height: 90%;
+}
+
 .cell:hover {
 	background-color: rgb(209, 207, 207);
 	cursor: pointer;

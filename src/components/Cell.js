@@ -5,7 +5,7 @@ import './styles/Cell.css';
 
 const Cell = (props) => (
 	<div className="cell" onClick={() => props.handleClick(props.arrayIndex)}>
-		{props.showState(props.arrayIndex)}
+		{props.showState(props.arrayIndex) === ' ' ? null : <img src={props.showState(props.arrayIndex)} />}
 	</div>
 );
 // Acá estoy creando un div con un onclick que le pasamos por props handleclick, que es una funcion creada en cellcontainers.
