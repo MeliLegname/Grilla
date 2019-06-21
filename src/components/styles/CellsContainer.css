@@ -27,12 +27,19 @@ body {
 }
 
 .ContFilas {
-	width: 75vw;
-	height: 75vw;
+	width: 75vh;
+	height: 75vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+}
+
+@media (max-width: 500px) {
+	.ContFilas {
+		width: 75vw;
+		height: 75vw;
+	}
 }
 
 /* @media (max-width: 700px) {

@@ -11,9 +11,9 @@ export default class App extends React.Component {
 		this.state = {
 			tituloDelJuego: 'TA TE TI',
 
-			numColumn: 10,
+			numColumn: 3,
 
-			numRow: 10,
+			numRow: 3,
 
 			withImg: true,
 
