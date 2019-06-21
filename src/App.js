@@ -11,9 +11,9 @@ export default class App extends React.Component {
 		this.state = {
 			tituloDelJuego: 'TA TE TI',
 
-			numColumn: 3,
+			numColumn: 10,
 
-			numRow: 3,
+			numRow: 10,
 
 			withImg: true,
 
@@ -28,7 +28,7 @@ export default class App extends React.Component {
 	}
 
 	initCellState() {
-		console.log(this.state.numColumn, this.state.numRow);
+		// console.log(this.state.numColumn, this.state.numRow);
 		let cellState = [ ...Array(parseInt(this.state.numColumn, 10) * parseInt(this.state.numRow, 10)) ].map(
 			(cellState) => (cellState = this.state.posibleValue[0])
 		);
@@ -37,7 +37,7 @@ export default class App extends React.Component {
 	//en esta funcion se inicializa el estado de la celda . dice que cellState es igual a la copia del numero que da como resultado la multiplicacion del numero de filas por el numero de columnas(porque de sta forma saco el numero indice) se le realizo el parseInt para poder convertir los strings en numeros y se le puso el numero 10 para avisar que va a ser un numero entero.
 
 	getArrayIndex = (row, column) => {
-		console.log(this.state);
+		// console.log(this.state);
 		return row * this.state.numColumn + column;
 	};
 
@@ -48,7 +48,7 @@ export default class App extends React.Component {
 
 	componentDidMount() {
 		this.initCellState();
-		console.log(this.state.cellState);
+		// console.log(this.state.cellState);
 	}
 
 	inputChangeHandle = (name, event) => {
@@ -63,7 +63,7 @@ export default class App extends React.Component {
 	//estoy haciendo un setstate e inmediatamente despues de eso ejecuto la funcion initcellsatate que NECESITA QUE el state este actualizado y no llega a estarlo.
 
 	handleClick = (arrayIndex) => {
-		console.log(arrayIndex);
+		// console.log(arrayIndex);
 		let estadoActual = this.state.cellState[arrayIndex];
 		let newState = [ ...this.state.cellState ];
 
