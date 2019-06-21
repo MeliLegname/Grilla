@@ -15,6 +15,8 @@ export default class App extends React.Component {
 
 			numRow: 3,
 
+			withImg: true,
+
 			posibleValue: [
 				' ',
 				'https://image.flaticon.com/icons/svg/763/763704.svg',
@@ -97,6 +99,7 @@ export default class App extends React.Component {
 					showState={this.showState}
 					posibleValue={this.state.posibleValue}
 					tituloDelJuego={this.state.tituloDelJuego}
+					withImg={this.state.withImg}
 				/>
 			</BrowserRouter>
 		);

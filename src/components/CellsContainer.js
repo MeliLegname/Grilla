@@ -34,6 +34,7 @@ export default class CellsContainer extends React.Component {
 												showState={(arrayIndex) => this.props.showState(arrayIndex)}
 												value={el}
 												posibleValue={this.props.posibleValue}
+												withImg={this.props.withImg}
 											/>
 										);
 										//el handleclick es una funcion creada en cells dentro de un onclick. a esta funcion le pasas por props un array index que es el resultado de la cuentra entre el index de las filas y el index de las columnas y la ejecurtas.

@@ -9,9 +9,11 @@
 	align-items: center;
 }
 
-.cell img {
-	max-width: 90%;
-	max-height: 90%;
+.cellImg {
+	background-repeat: no-repeat;
+	width: 90%;
+	height: 90%;
+	background-position: center;
 }
 
 .cell:hover {

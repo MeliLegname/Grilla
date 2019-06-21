@@ -10,7 +10,7 @@ body {
 
 	font-size: 1.5em;
 
-	color: rgb(32, 32, 32);
+	color: rgb(85, 108, 170);
 	margin: 2em;
 }
 
@@ -18,13 +18,10 @@ body {
 	background-color: white;
 	box-shadow: 0 0px 20px 0px rgba(0, 0, 0, 0.2);
 	border-radius: 10px;
-	/* 
-	width: 75%;
-	height: 75%;
-	display: flex; */
 
 	padding: 20px;
 	margin: 4rem auto;
+	max-width: 86vw;
 }
 
 .ContFilas {
@@ -35,3 +32,9 @@ body {
 	justify-content: center;
 	align-items: center;
 }
+
+/* @media (max-width: 700px) {
+	.CellsContainer {
+	
+	}
+} */
